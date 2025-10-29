@@ -18,6 +18,14 @@ pipeline {
   }
 
   stages {
+    stage('Intro') {
+      steps {
+        echo "================ Jenkins Build ================="
+        echo "Student: ${params.STUDENT_NAME}"
+        echo "==============================================="
+      }
+    }
+
     stage('Checkout') {
       steps {
         echo "Checking out branch: ${params.BRANCH_NAME}"
@@ -41,6 +49,7 @@ pipeline {
           mkdir -p build
           cp *.js build/ 2>/dev/null || true
           cp -r src build/src
+          echo "Build successful for ${STUDENT_NAME}"
           echo "Build completed successfully!"
           echo "App version: ${APP_VERSION}" > build/version.txt
         '''
