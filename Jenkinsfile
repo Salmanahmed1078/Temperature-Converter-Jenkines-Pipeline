@@ -21,7 +21,7 @@ pipeline {
     stage('Intro') {
       steps {
         echo "================ Jenkins Build ================="
-        echo "Student: ${params.STUDENT_NAME}"
+        echo "Name: ${params.STUDENT_NAME}"
         echo "==============================================="
       }
     }
