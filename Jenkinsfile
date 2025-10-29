@@ -7,20 +7,21 @@ pipeline {
 
   parameters {
     string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch to build from')
-    string(name: 'STUDENT_NAME', defaultValue: 'your name')
+    string(name: 'STUDENT_NAME', defaultValue: 'Salman Ahmed')
     choice(name: 'ENVIRONMENT', choices: ['dev', 'qa', 'prod'], description: 'Select environment')
     booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run Jest tests after build')
   }
 
   environment {
     APP_VERSION = "1.0.${BUILD_NUMBER}"
-    MAINTAINER = "Student"
+    MAINTAINER = "Salman Ahmed"
   }
 
   stages {
     stage('Checkout') {
       steps {
         echo "Checking out branch: ${params.BRANCH_NAME}"
+        echo "Student Name: ${params.STUDENT_NAME}"
         checkout scm
       }
     }
@@ -34,7 +35,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        echo "Building version ${APP_VERSION} for ${params.ENVIRONMENT} environment"
+        echo "Building version ${APP_VERSION} for ${params.ENVIRONMENT} environment by ${params.STUDENT_NAME}"
         sh '''
           echo "Simulating build process..."
           mkdir -p build
