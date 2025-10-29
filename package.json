@@ -1,0 +1,18 @@
+{
+  "name": "temperature-converter",
+  "version": "1.0.0",
+  "description": "Simple temperature converter with Jest tests and Jenkins pipeline",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo Building Temperature Converter Project...",
+    "test": "jest"
+  },
+  "keywords": ["temperature", "converter", "jest", "jenkins"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
+
+
